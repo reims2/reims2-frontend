@@ -7,6 +7,8 @@
     ":dependencyDashboard",
     ":prHourlyLimitNone",
     ":separateMajorReleases",
-    ""
+    "helpers:disableTypesNodeMajor",
+    "helpers:pinGitHubActionDigests",
+    "schedule:weekends"
   ]
 }
