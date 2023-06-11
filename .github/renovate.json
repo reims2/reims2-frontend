@@ -10,5 +10,12 @@
     "helpers:disableTypesNodeMajor",
     "helpers:pinGitHubActionDigests",
     "schedule:weekends"
+  ],
+  "packageRules": [
+    {
+      "matchPackageNames": ["vue", "nuxt", "webpack"],
+      "matchUpdateTypes": ["major"],
+      "enabled": false
+    }
   ]
 }
