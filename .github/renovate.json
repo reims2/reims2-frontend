@@ -1,0 +1,12 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:js-app",
+    "npm:unpublishSafe",
+    ":approveMajorUpdates",
+    ":dependencyDashboard",
+    ":prHourlyLimitNone",
+    ":separateMajorReleases",
+    ""
+  ]
+}
