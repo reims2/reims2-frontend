@@ -21,7 +21,7 @@ jobs:
           cache: "yarn"
 
       - name: Install dependencies 📦
-        run: yarn install --frozen-lockfile
+        run: yarn install --immutable
       - name: Lint files
         run: yarn run lint
       - name: Run tests
@@ -30,7 +30,7 @@ jobs:
         run: yarn run build
   docker:
     # Only start publish after successful build & test on main branch
-    needs: build
+    needs: ci
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
