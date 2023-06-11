@@ -12,8 +12,17 @@
   ],
   "packageRules": [
     {
-      "matchPackageNames": ["vue", "nuxt", "webpack", "nuxt-route-meta", "ts-loader"],
-      "matchUpdateTypes": ["major"],
+      "matchPackageNames": [
+        "vue",
+        "nuxt",
+        "webpack",
+        "nuxt-route-meta",
+        "ts-loader",
+        "node"
+      ],
+      "matchUpdateTypes": [
+        "major"
+      ],
       "enabled": false
     }
   ]
