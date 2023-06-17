@@ -38,6 +38,8 @@ jobs:
     needs: ci
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
+    outputs:
+      tags: ${{ steps.meta.outputs.tags }}
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
       - name: Setup Docker buildx
@@ -92,3 +94,18 @@ jobs:
         run: |
           rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
+  deploy:
+    # Only start publish after successful build & test on main branch
+    needs: docker
+    runs-on: ubuntu-latest
+    # if: github.ref == 'refs/heads/main'
+    concurrency: ci-${{ github.ref }}
+    steps:
+      - name: executing remote ssh commands using ssh key
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: reims2.app
+          username: actions
+          key: ${{ secrets.PRIVATE_KEY }}
+          port: 22
+          script: /srv/update_script/update.sh reims2 frontend ${{needs.docker.outputs.tags[0]}}
