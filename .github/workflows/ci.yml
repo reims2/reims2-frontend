@@ -36,6 +36,7 @@ jobs:
   docker:
     # Only start publish after successful build & test on main branch
     needs: ci
+    if: ${{ github.event_name == 'merge_group' }}
     concurrency: docker-${{ github.ref }}
     runs-on: ubuntu-latest
     outputs:
@@ -89,7 +90,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     concurrency: deploy-reims2
     steps:
-      - name: executing remote ssh commands using ssh key
+      - name: deploy via ssh
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: reims2.app
