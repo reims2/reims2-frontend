@@ -36,7 +36,7 @@ jobs:
   docker:
     # Only start publish after successful build & test on main branch
     needs: ci
-    if: ${{ github.event_name == 'merge_group' }}
+    if: ${{ github.event_name != 'merge_group' }}
     concurrency: docker-${{ github.ref }}
     runs-on: ubuntu-latest
     outputs:
