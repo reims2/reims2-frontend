@@ -39,7 +39,7 @@ jobs:
     concurrency: docker-${{ github.ref }}
     runs-on: ubuntu-latest
     outputs:
-      tags: ${{ fromJSON(steps.meta.outputs.json).tags}}
+      json: ${{ steps.meta.outputs.json }}
     steps:
       - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
       - name: Setup Docker buildx
@@ -96,4 +96,4 @@ jobs:
           username: actions
           key: ${{ secrets.PRIVATE_KEY }}
           port: 22
-          script: /srv/update_script/update.sh reims2 frontend ${{needs.docker.outputs.tags[0]}}
+          script: /srv/update_script/update.sh reims2 frontend ${{ fromJSON(needs.docker.outputs.json).tags[0] }}
