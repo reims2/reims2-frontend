@@ -86,7 +86,7 @@ jobs:
     # Only start publish after successful build & test on main branch
     needs: docker
     runs-on: ubuntu-latest
-    # if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/main'
     concurrency: deploy-reims2
     steps:
       - name: executing remote ssh commands using ssh key
