@@ -3977,6 +3977,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@vue/devtools-api@npm:^6.0.0-beta.11":
+  version: 6.5.0
+  resolution: "@vue/devtools-api@npm:6.5.0"
+  checksum: ec819ef3a426e91d09e9cfefd2827e9ed8ec9d62bb3b3e0674f3da8c7e92a4b879c3b777dc7329172ca6fe2670b62dd5580d23160339208f0f5ae038f2e504ad
+  languageName: node
+  linkType: hard
+
 "@webassemblyjs/ast@npm:1.9.0":
   version: 1.9.0
   resolution: "@webassemblyjs/ast@npm:1.9.0"
@@ -14747,7 +14754,7 @@ __metadata:
     vue: 2.7.14
     vue-enter-to-tab: 1.0.2
     vue-shortkey: 3.1.7
-    vuex: 3.6.2
+    vuex: 4.1.0
     vuex-persistedstate: 4.1.0
     webpack: 4.46.0
   languageName: unknown
@@ -17443,7 +17450,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuex@npm:3.6.2, vuex@npm:^3.6.2":
+"vuex@npm:4.1.0":
+  version: 4.1.0
+  resolution: "vuex@npm:4.1.0"
+  dependencies:
+    "@vue/devtools-api": ^6.0.0-beta.11
+  peerDependencies:
+    vue: ^3.2.0
+  checksum: f5e375a9c19ea3bbf4b9bc4c2adc033c37d2583e59b2d79da42bde2ab0771a086c419d62323fb354b6d421a8ddb4fd4e14f3abe5d49e9862311bc4847732b608
+  languageName: node
+  linkType: hard
+
+"vuex@npm:^3.6.2":
   version: 3.6.2
   resolution: "vuex@npm:3.6.2"
   peerDependencies:
