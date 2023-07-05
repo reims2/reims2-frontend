@@ -67,6 +67,18 @@ export interface SanitizedGlassesInput extends GlassesMeta {
   os: Eye
 }
 
+export interface PhilscoreReasons {
+  sphereScore: number
+  cylinderScore: number
+  axisScore: number
+  addScore: number
+  sphericalEquivalent: number
+  contraryDiffs: number
+  equalSphereAndSmallCylinder: number
+  multiFocalAdd: number
+  smallerLensSphere: number
+}
+
 export interface Glasses extends SanitizedGlassesInput {
   id: number // backend ID
   sku: number | null
@@ -81,8 +93,8 @@ export type GeneralGlassesDataKey = (typeof generalGlassesDataKeys)[number]
 
 export interface GlassesResult extends Glasses {
   score: number
-  odScore: number
-  osScore: number
+  odScoreReasons: PhilscoreReasons
+  osScoreReasons: PhilscoreReasons
 }
 
 /** Input to PhilScore function, correctly parsed Eye with isBAL */

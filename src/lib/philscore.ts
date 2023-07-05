@@ -1,4 +1,11 @@
-import { Glasses, Eye, GlassesSearch, GlassesResult, hasAdd } from '@/model/GlassesModel'
+import {
+  Glasses,
+  Eye,
+  GlassesSearch,
+  GlassesResult,
+  hasAdd,
+  PhilscoreReasons,
+} from '@/model/GlassesModel'
 
 // glasses with a philscore higher than this will be removed
 const PHILSCORE_CUT_OFF = 10
@@ -34,19 +41,29 @@ export default function calculateAllPhilscore(
         isSinglefocal || rxOs.isBAL || checkForAdditionalTolerance(glass.os, rxOs, tolerance),
     )
     .map((glass) => {
-      const odScore = rxOd.isBAL ? 0 : calcSingleEyePhilscore(rxOd, glass.od, isSinglefocal)
-      const osScore = rxOs.isBAL ? 0 : calcSingleEyePhilscore(rxOs, glass.os, isSinglefocal)
+      const odScoreReasons = calcSingleEyePhilscore(rxOd, glass.od, isSinglefocal)
+      const osScoreReasons = calcSingleEyePhilscore(rxOs, glass.os, isSinglefocal)
+      const odScore = rxOd.isBAL ? 0 : convertReasonsToScore(odScoreReasons)
+      const osScore = rxOs.isBAL ? 0 : convertReasonsToScore(osScoreReasons)
 
-      const result: GlassesResult = {
-        ...glass,
-        score: odScore + osScore,
-        odScore,
-        osScore,
-      }
-      return result
+      return { ...glass, score: odScore + osScore, odScoreReasons, osScoreReasons }
     })
     .filter((glass) => glass.score <= PHILSCORE_CUT_OFF)
     .sort((a, b) => (a.score > b.score ? 1 : -1))
+}
+
+function convertReasonsToScore(reasons: PhilscoreReasons): number {
+  return (
+    reasons.sphereScore +
+    reasons.cylinderScore +
+    reasons.axisScore +
+    reasons.addScore +
+    reasons.sphericalEquivalent +
+    reasons.contraryDiffs +
+    reasons.equalSphereAndSmallCylinder +
+    reasons.multiFocalAdd +
+    reasons.smallerLensSphere
+  )
 }
 
 function checkForSingleAxisTolerance(rx: Eye, lens: Eye): boolean {
@@ -101,7 +118,11 @@ function checkForAdditionalTolerance(eye: Eye, rx: Eye, tolerance: number): bool
   return Math.abs(eye.add - rx.add) <= tolerance
 }
 
-function calcSingleEyePhilscore(rx: Eye, lens: Eye, isSinglefocal: boolean): number {
+export function calcSingleEyePhilscore(
+  rx: Eye,
+  lens: Eye,
+  isSinglefocal: boolean,
+): PhilscoreReasons {
   /**
    * rx: desired values for a single eye
    * lens: single eye of one available glasses
@@ -114,27 +135,48 @@ function calcSingleEyePhilscore(rx: Eye, lens: Eye, isSinglefocal: boolean): num
   let axisDiff = Math.abs(lens.axis - rx.axis)
   axisDiff = axisDiff > 90 ? 180 - axisDiff : axisDiff // account for wraparound (e.g. 190 is 10 in reality)
 
-  // This is our main score, weighting the difference of glass and lens on all parameters
-  const initScore = sphereDiff + cylinderDiff + addDiff * 0.1 + axisDiff / 3600
-  let score = initScore
+  const addDiffWeighted = addDiff * 0.1
+  const axisDiffWeighted = axisDiff / 3600
 
-  /* In the following that score gets improved (=smaller) or worse (=bigger) based on a few rules to account for some optometry special cases */
+  // The diffs make up our main score, weighting the difference of glass and lens on all parameters
+  const reasons = {
+    sphereScore: sphereDiff,
+    cylinderScore: cylinderDiff,
+    axisScore: axisDiffWeighted,
+    addScore: addDiffWeighted,
+    sphericalEquivalent: 0,
+    contraryDiffs: 0,
+    equalSphereAndSmallCylinder: 0,
+    multiFocalAdd: 0,
+    smallerLensSphere: 0,
+  } as PhilscoreReasons
 
-  // Those first 3 rules are applied mutually exclusive in order (as soon as one applies, the others aren't applied). Why? No one knows
-  let diff = 0
-  if (diff === 0)
-    diff = sphericalEquivalentScore(rx.sphere, lens.sphere, rx.cylinder, lens.cylinder)
-  if (diff === 0) diff = contraryDiffsScore(rx.sphere, lens.sphere, rx.cylinder, lens.cylinder)
-  if (diff === 0) diff = equalSphereAndSmallCylinderScore(rx.sphere, lens.sphere, cylinderDiff)
+  /* In the following the score gets improved (=smaller) or worse (=bigger) based on a few rules to account for some optometry special cases */
 
-  score += diff
+  // The next 3 rules are applied mutually exclusive (as soon as one applies, the others are ignored). Why? No one knows
+  reasons.sphericalEquivalent = sphericalEquivalentScore(
+    rx.sphere,
+    lens.sphere,
+    rx.cylinder,
+    lens.cylinder,
+  )
+  if (reasons.sphericalEquivalent === 0) {
+    reasons.contraryDiffs = contraryDiffsScore(rx.sphere, lens.sphere, rx.cylinder, lens.cylinder)
+  }
+  if (reasons.sphericalEquivalent === 0 && reasons.contraryDiffs === 0) {
+    reasons.equalSphereAndSmallCylinder = equalSphereAndSmallCylinderScore(
+      rx.sphere,
+      lens.sphere,
+      cylinderDiff,
+    )
+  }
 
   if (!isSinglefocal && hasAdd(rx) && hasAdd(lens)) {
-    score += multiFocalAddScore(rx.add, lens.add)
+    reasons.multiFocalAdd = multiFocalAddScore(rx.add, lens.add)
   }
-  score += smallerLensSphereScore(rx.sphere, lens.sphere)
+  reasons.smallerLensSphere = smallerLensSphereScore(rx.sphere, lens.sphere)
 
-  return score
+  return reasons
 }
 
 export function smallerLensSphereScore(rxSphere: number, lensSphere: number): number {
