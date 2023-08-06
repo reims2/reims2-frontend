@@ -1,6 +1,7 @@
 <!-- eslint-disable vue/valid-v-slot -->
 <template>
-  <v-container fluid class="px-lg-10">
+  <single-pane-layout>
+    <template #title>View all glasses</template>
     <v-data-table-server
       v-model:items-per-page="itemsPerPage"
       v-model:sort-by="sortBy"
@@ -64,7 +65,7 @@
     </v-data-table-server>
 
     <v-btn class="mr-4" variant="plain" tabindex="-1" @click="reset">Reset table</v-btn>
-  </v-container>
+  </single-pane-layout>
 </template>
 
 <script setup lang="ts">
@@ -73,6 +74,7 @@ import MinMaxInput from '@/components/MinMaxInput.vue'
 import { useTableData } from '@/composables/table-data'
 import { useTableFilter } from '@/composables/table-filter'
 import { TableSortBy } from '@/model/ReimsModel'
+import SinglePaneLayout from '@/components/SinglePaneLayout.vue'
 
 const headers = [
   { key: 'sku', title: 'SKU' },

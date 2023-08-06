@@ -2,6 +2,9 @@
   <v-navigation-drawer
     :rail="isMiniDrawer"
     :model-value="isDrawerOpen"
+    :width="200"
+    class="no-border"
+    color="background"
     @update:model-value="(val) => (rootStore.drawer = val)"
   >
     <template #prepend>
@@ -21,9 +24,7 @@
     </template>
     <location-dialog v-model="dialog" />
 
-    <v-divider v-if="!isMiniDrawer" class="mt-3" />
-
-    <v-list v-if="!mobile" nav color="accent" class="bigger-text">
+    <v-list v-if="!mobile" nav color="secondary" class="bigger-text">
       <v-list-item
         v-for="item in mainItems"
         :key="item.title"
@@ -36,7 +37,6 @@
         </template>
       </v-list-item>
     </v-list>
-    <v-divider v-if="!mobile" class="mb-3" />
 
     <v-list nav color="accent">
       <v-list-item
@@ -53,7 +53,6 @@
     </v-list>
 
     <template #append>
-      <v-divider />
       <v-list nav>
         <v-list-item title="Change location" :disabled="!isOnline" @click.stop="dialog = true">
           <template #prepend>
@@ -138,5 +137,9 @@ const isMiniDrawer = computed(() => {
 
 .bigger-text .v-list-item-title {
   font-size: 1.2rem !important;
+}
+
+.no-border {
+  border-style: none !important;
 }
 </style>

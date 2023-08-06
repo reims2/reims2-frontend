@@ -1,6 +1,5 @@
 <template>
   <v-container>
-    <the-header />
     <v-row>
       <v-col cols="12" class="d-flex justify-center mt-8">
         <v-form
@@ -43,7 +42,6 @@
 </template>
 
 <script setup lang="ts">
-import TheHeader from '@/components/TheHeader.vue'
 import router from '@/router'
 import { useAuthStore } from '@/stores/auth'
 import { useRoute } from 'vue-router'

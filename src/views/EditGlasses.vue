@@ -1,61 +1,63 @@
 <template>
-  <v-container>
-    <v-row dense class="justify-center">
-      <v-col cols="12" md="6" lg="5">
-        <div class="pb-2">Start by entering a SKU to dispense or edit glasses.</div>
-        <v-form ref="form" v-model="valid" class="pt-3" @submit.prevent="startDispension">
-          <v-row>
-            <v-col cols="12">
-              <select-glasses-input
-                ref="firstInput"
-                v-model:sku="inputSku"
-                v-model:error-messsage="errorMesssage"
-                :loading="isLoading"
-                hint-for-selected="Press ENTER to dispense"
-                style="max-width: 500px"
-                @change="(glasses) => (selected = glasses)"
-              ></select-glasses-input>
-            </v-col>
-            <v-col v-if="selected">
-              <div class="d-flex flex-shrink-1 justify-start">
-                <glass-card :key="selected.key" :model-value="selected" editable>
-                  <template #actions>
-                    <v-btn variant="text" class="mx-0" @click="startDispension">Dispense</v-btn>
-                    <div class="d-flex flex-grow-1 justify-end">
-                      <v-menu offset-y left>
-                        <template #activator="{ props }">
-                          <v-btn icon v-bind="props">
-                            <v-icon>{{ mdiDotsVertical }}</v-icon>
-                          </v-btn>
-                        </template>
-                        <v-list density="compact">
-                          <v-list-item>
-                            <delete-button
-                              :glass="selected"
-                              @delete="(reason) => submitDeletion(reason)"
-                            />
-                          </v-list-item>
-                        </v-list>
-                      </v-menu>
-                    </div>
-                  </template>
-                </glass-card>
-              </div>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-col>
-
-      <v-col cols="12" md="4" lg="3" class="pl-md-6 pt-3 pt-md-2">
-        <div class="text-h6 pb-4 d-flex align-center">
-          Recently dispensed or deleted
-          <v-progress-circular
-            v-if="isLastDispensedLoading"
-            indeterminate
-            size="x-small"
-            class="ml-2"
-          ></v-progress-circular>
-        </div>
+  <dual-pane-layout>
+    <template #leftTitle>Edit glasses</template>
+    <template #left>
+      <div class="pb-2">Start by entering a SKU to dispense or edit glasses.</div>
+      <v-form ref="form" v-model="valid" class="pt-3" @submit.prevent="startDispension">
+        <v-row>
+          <v-col cols="12">
+            <select-glasses-input
+              ref="firstInput"
+              v-model:sku="inputSku"
+              v-model:error-messsage="errorMesssage"
+              :loading="isLoading"
+              hint-for-selected="Press ENTER to dispense"
+              style="max-width: 500px"
+              @change="(glasses) => (selected = glasses)"
+            ></select-glasses-input>
+          </v-col>
+          <v-col v-if="selected">
+            <div class="d-flex flex-shrink-1 justify-start">
+              <glass-card :key="selected.key" :model-value="selected" editable>
+                <template #actions>
+                  <v-btn variant="text" class="mx-0" @click="startDispension">Dispense</v-btn>
+                  <div class="d-flex flex-grow-1 justify-end">
+                    <v-menu offset-y left>
+                      <template #activator="{ props }">
+                        <v-btn icon v-bind="props">
+                          <v-icon>{{ mdiDotsVertical }}</v-icon>
+                        </v-btn>
+                      </template>
+                      <v-list density="compact">
+                        <v-list-item>
+                          <delete-button
+                            :glass="selected"
+                            @delete="(reason) => submitDeletion(reason)"
+                          />
+                        </v-list-item>
+                      </v-list>
+                    </v-menu>
+                  </div>
+                </template>
+              </glass-card>
+            </div>
+          </v-col>
+        </v-row>
+      </v-form>
+    </template>
+    <template #rightTitle>
+      <div class="d-flex align-center">
+        Recently dispensed or deleted
+        <v-progress-circular
+          v-if="isLastDispensedLoading"
+          indeterminate
+          size="x-small"
+          class="ml-2"
+        ></v-progress-circular>
+      </div>
+    </template>
+    <template #right>
+      <div v-if="lastDispensed.length > 0" style="max-width: 300px">
         <v-alert v-if="!isOnline" type="warning" variant="outlined" density="compact">
           Go online to view recently dispensed glasses
         </v-alert>
@@ -65,20 +67,21 @@
         <div v-for="glasses in lastDispensed" v-else :key="glasses.id" style="opacity: 80%">
           <glass-card :model-value="glasses">
             <template #actions>
-              <v-btn variant="text" color="accent" class="mx-0" @click="undoDispension(glasses)">
+              <v-btn variant="text" color="secondary" class="mx-0" @click="undoDispension(glasses)">
                 Undo
               </v-btn>
             </template>
           </glass-card>
         </div>
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </template>
+  </dual-pane-layout>
 </template>
 
 <script setup lang="ts">
 import { mdiDotsVertical } from '@mdi/js'
 
+import DualPaneLayout from '@/components/DualPaneLayout.vue'
 import SelectGlassesInput from '@/components/SelectGlassesInput.vue'
 import { Glasses } from '@/model/GlassesModel'
 import { VForm } from 'vuetify/lib/components/index.mjs'

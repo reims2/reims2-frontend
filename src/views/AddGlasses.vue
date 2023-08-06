@@ -1,62 +1,50 @@
 <template>
-  <v-container @keyup.a="submit">
-    <v-row class="justify-center" dense>
-      <v-col cols="12" md="6" lg="4" class="pb-2 px-2 pt-4">
-        <v-form ref="form" v-model="valid" @submit.prevent>
-          <v-row dense>
-            <v-col v-for="item in generalGlassesDataKeys" :key="item" cols="12" class="pa-0 pb-5">
-              <auto-complete-field
-                ref="firstInput"
-                v-model="glassesMeta[item]"
-                v-bind="glassesMetaUIData[item]"
-              />
-            </v-col>
-            <v-col cols="12" md="6" class="px-1 pr-md-5 py-0">
-              <single-eye-input v-model="odEye" eye-name="OD" :add-enabled="isMultifocal" />
-            </v-col>
-            <v-col cols="12" md="6" class="px-1 pl-md-5 py-0">
-              <single-eye-input v-model="osEye" eye-name="OS" :add-enabled="isMultifocal" />
-            </v-col>
-            <v-col cols="12" class="px-0 pt-0">
-              <div class="pb-3 text-body-2 text-medium-emphasis">
-                You are in {{ reimsSiteName }} ({{ freeSlots }} SKUs left)
-              </div>
-              <div class="d-flex">
-                <v-btn
-                  v-prevent-enter-tab
-                  :disabled="!valid || loading"
-                  color="primary"
-                  class="mr-4"
-                  type="submit"
-                  :loading="loading"
-                  @click="submit"
-                >
-                  <span class="text-decoration-underline">A</span>
-                  dd glasses
-                </v-btn>
-                <v-btn
-                  v-prevent-enter-tab
-                  class="mr-4"
-                  variant="plain"
-                  tabindex="-1"
-                  @click="reset"
-                >
-                  Clear form
-                </v-btn>
-              </div>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-col>
-      <v-col
-        v-if="lastAdded != null && lastAdded.length > 0"
-        ref="results"
-        cols="12"
-        md="4"
-        lg="3"
-        class="pl-md-6 pt-3 pt-md-2"
-      >
-        <div class="text-h6 pb-2">Recently added</div>
+  <dual-pane-layout>
+    <template #leftTitle>Add glasses</template>
+    <template #left>
+      <v-form ref="form" v-model="valid" @submit.prevent>
+        <v-row dense>
+          <v-col v-for="item in generalGlassesDataKeys" :key="item" cols="12" class="pa-0 pb-5">
+            <auto-complete-field
+              ref="firstInput"
+              v-model="glassesMeta[item]"
+              v-bind="glassesMetaUIData[item]"
+            />
+          </v-col>
+          <v-col cols="12" md="6" class="px-1 pr-md-5 py-0">
+            <single-eye-input v-model="odEye" eye-name="OD" :add-enabled="isMultifocal" />
+          </v-col>
+          <v-col cols="12" md="6" class="px-1 pl-md-5 py-0">
+            <single-eye-input v-model="osEye" eye-name="OS" :add-enabled="isMultifocal" />
+          </v-col>
+          <v-col cols="12" class="px-0 pt-0">
+            <div class="pb-3 text-body-2 text-medium-emphasis">
+              You are in {{ reimsSiteName }} ({{ freeSlots }} SKUs left)
+            </div>
+            <div class="d-flex">
+              <v-btn
+                v-prevent-enter-tab
+                :disabled="!valid || loading"
+                color="primary"
+                class="mr-4"
+                type="submit"
+                :loading="loading"
+                @click="submit"
+              >
+                <span class="text-decoration-underline">A</span>
+                dd glasses
+              </v-btn>
+              <v-btn v-prevent-enter-tab class="mr-4" variant="plain" tabindex="-1" @click="reset">
+                Clear form
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row>
+      </v-form>
+    </template>
+    <template #rightTitle>Recently added</template>
+    <template #right>
+      <div style="max-width: 300px">
         <div
           v-for="(item, idx) in lastAdded.slice(0, 3)"
           :key="item.id"
@@ -72,20 +60,21 @@
             </template>
           </glass-card>
         </div>
-      </v-col>
-    </v-row>
-  </v-container>
+      </div>
+    </template>
+  </dual-pane-layout>
 </template>
 
 <script setup lang="ts">
 import { glassesMetaUIData } from '@/util/glasses-utils'
+import { Glasses, generalGlassesDataKeys } from '@/model/GlassesModel'
 
 import { useRootStore } from '@/stores/root'
 import { useEnterToTab } from '@/lib/enter-to-tab'
 
 import AutoCompleteField from '@/components/AutoCompleteField.vue'
 import SingleEyeInput from '@/components/SingleEyeInput.vue'
-import { Glasses, generalGlassesDataKeys } from '@/model/GlassesModel'
+import DualPaneLayout from '@/components/DualPaneLayout.vue'
 
 import { useDisplay } from 'vuetify'
 import { useAddGlasses } from '@/composables/add'

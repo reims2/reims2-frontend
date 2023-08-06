@@ -1,12 +1,13 @@
 <template>
-  <v-container>
-    <v-row dense class="d-flex justify-center">
-      <v-col cols="12" md="6" lg="4">
+  <single-pane-layout cols="6">
+    <template #title>View reports</template>
+    <v-row dense class="">
+      <v-col cols="12" class="px-5 pt-6">
         <div class="pb-2 text-h5">Live statistics</div>
         <div class="pb-4 text-medium-emphasis">
           Visit the monitoring dashboard to see live statistics.
         </div>
-        <v-btn color="accent" href="https://monitoring.reims2.app" target="_blank">
+        <v-btn color="primary" href="https://monitoring.reims2.app" target="_blank">
           Open dashboard
         </v-btn>
 
@@ -16,7 +17,7 @@
         <div class="pb-4 text-medium-emphasis">
           This report contains all active glasses in the storage of the current location.
         </div>
-        <v-btn color="accent" :loading="loadingInventoryReport" @click="downloadInventoryReport">
+        <v-btn color="primary" :loading="loadingInventoryReport" @click="downloadInventoryReport">
           Download
         </v-btn>
 
@@ -36,13 +37,13 @@
           style="max-width: 250px"
         />
 
-        <v-btn color="accent" :loading="loadingDispensedReport" @click="downloadDispensedReport">
+        <v-btn color="primary" :loading="loadingDispensedReport" @click="downloadDispensedReport">
           Download
         </v-btn>
         <a ref="downloadLink" :href="csvUri" target="_blank" :download="filename" class="d-none" />
       </v-col>
     </v-row>
-  </v-container>
+  </single-pane-layout>
 </template>
 
 <script setup lang="ts">
@@ -50,6 +51,7 @@ import { mdiCalendar } from '@mdi/js'
 import { useRootStore } from '@/stores/root'
 import { useGlassesStore } from '@/stores/glasses'
 import dayjs from 'dayjs'
+import SinglePaneLayout from '@/components/SinglePaneLayout.vue'
 
 import { useToast } from 'vue-toastification'
 const toast = useToast()

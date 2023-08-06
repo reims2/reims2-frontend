@@ -47,8 +47,8 @@
         </span>
       </span>
     </v-card-subtitle>
-    <v-card-text class="py-0">
-      <v-container class="pa-0">
+    <v-card-text class="py-1">
+      <v-container class="pa-0 pb-0">
         <v-row dense>
           <v-col v-for="eye in eyes" :key="eye.key" cols="6">
             <div class="d-flex">

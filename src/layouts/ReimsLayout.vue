@@ -1,9 +1,8 @@
 <template>
   <v-app>
     <the-drawer :main-items="mainItems" :other-items="otherItems" />
-    <the-header />
     <v-main class="background">
-      <router-view v-slot="{ Component }" class="py-6 px-6">
+      <router-view v-slot="{ Component }">
         <transition name="fade">
           <keep-alive>
             <component :is="Component" />
@@ -32,7 +31,6 @@ import { useDisplay } from 'vuetify'
 import dayjs from 'dayjs'
 
 import TheFooter from '@/components/TheFooter.vue'
-import TheHeader from '@/components/TheHeader.vue'
 import TheDrawer from '@/components/TheDrawer.vue'
 import TheBottomBar from '@/components/TheBottomBar.vue'
 

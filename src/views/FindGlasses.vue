@@ -1,97 +1,91 @@
 <template>
-  <v-container @keyup.s="submitAndUpdate">
-    <v-row dense class="justify-center">
-      <v-col cols="12" md="6" lg="5" class="px-3">
-        <v-form ref="form" v-model="valid" @submit.prevent>
-          <v-row dense>
-            <v-col cols="12" class="px-0 pb-3">
-              <auto-complete-field
-                ref="firstInput"
-                v-model="glassesTypeInput"
-                v-bind="glassesTypeData"
-                :persistent-hint="true"
-              />
-            </v-col>
-            <v-col cols="12" md="6" class="px-1 pr-md-5 py-md-0 py-1">
-              <single-eye-input
-                v-model="odEye"
-                eye-name="OD"
-                :add-enabled="glassesTypeInput === 'multifocal'"
-                bal-enabled
-              />
-            </v-col>
-            <v-col cols="12" md="6" class="px-1 pl-md-5 py-0">
-              <single-eye-input
-                v-model="osEye"
-                eye-name="OS"
-                :add-enabled="glassesTypeInput === 'multifocal'"
-                bal-enabled
-              />
-            </v-col>
-            <v-col cols="12" class="pa-0">
-              <v-checkbox
-                v-model="highTolerance"
-                default-value="false"
-                label="Increase search tolerance (might yield bad results)"
-                tabindex="-1"
-              />
-            </v-col>
-            <v-col cols="12" class="px-0">
-              <div>
-                <v-btn
-                  v-prevent-enter-tab
-                  :disabled="Boolean(searchButtonDisabled)"
-                  color="primary"
-                  class="mr-4"
-                  type="submit"
-                  @click="submitAndUpdate"
-                >
-                  <span class="text-decoration-underline">S</span>
-                  earch glasses
-                </v-btn>
-                <v-btn
-                  v-prevent-enter-tab
-                  class="mr-4"
-                  variant="plain"
-                  tabindex="-1"
-                  @click="reset"
-                >
-                  Clear form
-                </v-btn>
-              </div>
-            </v-col>
-          </v-row>
-        </v-form>
-      </v-col>
-      <v-col ref="results" cols="12" md="6" lg="5" xl="3" class="pt-10 pt-md-1 px-0 pl-md-6">
-        <v-alert v-if="matches == null" type="info" color="primary" density="comfortable">
-          Start a new search to display results
-        </v-alert>
-        <v-alert v-else-if="matches.length === 0" type="warning" density="comfortable">
-          No suitable glasses found. Please try another search.
-        </v-alert>
-        <div v-else>
-          <div v-for="item in paginatedMatches" :key="item.id">
-            <glass-card :model-value="item">
-              <template #actions>
-                <v-btn
-                  :to="{ path: '/edit', query: { sku: item.sku } }"
-                  variant="text"
-                  class="mx-0"
-                  color="primary"
-                >
-                  Open Glasses
-                </v-btn>
-              </template>
-            </glass-card>
-          </div>
-          <div class="text-center">
-            <v-pagination v-model="page" :length="pageCount" rounded="circle" />
-          </div>
+  <dual-pane-layout>
+    <template #leftTitle>Find Glasses</template>
+    <template #left>
+      <v-form ref="form" v-model="valid" @submit.prevent>
+        <v-row dense>
+          <v-col cols="12" class="px-0 pb-3">
+            <auto-complete-field
+              ref="firstInput"
+              v-model="glassesTypeInput"
+              v-bind="glassesTypeData"
+              :persistent-hint="true"
+            />
+          </v-col>
+          <v-col cols="12" md="6" class="px-1 pr-md-5 py-md-0 py-1">
+            <single-eye-input
+              v-model="odEye"
+              eye-name="OD"
+              :add-enabled="glassesTypeInput === 'multifocal'"
+              bal-enabled
+            />
+          </v-col>
+          <v-col cols="12" md="6" class="px-1 pl-md-5 py-0">
+            <single-eye-input
+              v-model="osEye"
+              eye-name="OS"
+              :add-enabled="glassesTypeInput === 'multifocal'"
+              bal-enabled
+            />
+          </v-col>
+          <v-col cols="12" class="pa-0">
+            <v-checkbox
+              v-model="highTolerance"
+              default-value="false"
+              label="Increase search tolerance (might yield bad results)"
+              tabindex="-1"
+            />
+          </v-col>
+          <v-col cols="12" class="px-0">
+            <div>
+              <v-btn
+                v-prevent-enter-tab
+                :disabled="Boolean(searchButtonDisabled)"
+                color="primary"
+                class="mr-4"
+                type="submit"
+                @click="submitAndUpdate"
+              >
+                <span class="text-decoration-underline">S</span>
+                earch glasses
+              </v-btn>
+              <v-btn v-prevent-enter-tab class="mr-4" variant="plain" tabindex="-1" @click="reset">
+                Clear form
+              </v-btn>
+            </div>
+          </v-col>
+        </v-row>
+      </v-form>
+    </template>
+    <template #rightTitle>Results</template>
+    <template #right>
+      <v-alert v-if="matches == null" type="info" color="primary" density="comfortable">
+        Start a new search to display results
+      </v-alert>
+      <v-alert v-else-if="matches.length === 0" type="warning" density="comfortable">
+        No suitable glasses found. Please try another search.
+      </v-alert>
+      <div v-else>
+        <div v-for="item in paginatedMatches" :key="item.id">
+          <glass-card :model-value="item">
+            <template #actions>
+              <v-btn
+                :to="{ path: '/edit', query: { sku: item.sku } }"
+                variant="text"
+                class="mx-0"
+                color="primary"
+              >
+                Open Glasses
+              </v-btn>
+            </template>
+          </glass-card>
         </div>
-      </v-col>
-    </v-row>
-  </v-container>
+        <div class="text-center">
+          <v-pagination v-model="page" :length="pageCount" rounded="circle" />
+        </div>
+      </div>
+    </template>
+  </dual-pane-layout>
 </template>
 
 <script setup lang="ts">
@@ -99,6 +93,7 @@ import { useGlassesStore } from '@/stores/glasses'
 
 import SingleEyeInput from '@/components/SingleEyeInput.vue'
 import AutoCompleteField from '@/components/AutoCompleteField.vue'
+import DualPaneLayout from '@/components/DualPaneLayout.vue'
 
 import { EyeSearch } from '@/model/GlassesModel'
 import { glassesMetaUIData } from '@/util/glasses-utils'
