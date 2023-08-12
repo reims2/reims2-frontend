@@ -59,14 +59,16 @@
     </template>
     <template #rightTitle>Results</template>
     <template #right>
-      <v-alert v-if="matches == null" type="info" color="primary" density="comfortable">
-        Start a new search to display results
-      </v-alert>
-      <v-alert v-else-if="matches.length === 0" type="warning" density="comfortable">
-        No suitable glasses found. Please try another search.
-      </v-alert>
-      <div v-else>
-        <div v-for="item in paginatedMatches" :key="item.id">
+      <div>
+        <div v-if="matches == null" class="text-medium-emphasis">
+          Start a search to display results.
+        </div>
+        <v-alert v-else-if="matches.length === 0" type="warning" density="comfortable">
+          No suitable glasses found. Please try another search.
+        </v-alert>
+      </div>
+      <div v-if="matches != null && matches.length > 0">
+        <div v-for="item in paginatedMatches" :key="item.id" class="pb-2">
           <glass-card :model-value="item">
             <template #actions>
               <v-btn

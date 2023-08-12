@@ -33,15 +33,15 @@ export const vuetifyOptions: VuetifyOptions = {
       light: {
         colors: {
           primary: '#00658c',
-          secondary: '#924c00',
-          accent: '#5d6136', // tertiary
-          background: '#ffede3',
-          surface: '#fffbff',
+          secondary: '#5b6300',
+          accent: '#924c00', // tertiary
+          background: '#f5faff',
+          surface: '#fff',
           error: '#ba1a1a',
           info: '#1a57c7',
           success: '#006d3c',
           warning: '#9e4300',
-          'surface-variant': '#dbe4e6',
+          'surface-variant': '#dde3ea',
           'on-primary': '#ffffff',
           'on-secondary': '#ffffff',
           'on-accent': '#ffffff',
@@ -50,8 +50,8 @@ export const vuetifyOptions: VuetifyOptions = {
           'on-success': '#ffffff',
           'on-warning': '#ffffff',
           'on-background': '#191c1d',
-          'on-surface': '#191c1d',
-          'on-surface-variant': '#3f484a',
+          'on-surface': '#191c1e',
+          'on-surface-variant': '#41484d',
         },
       },
     },

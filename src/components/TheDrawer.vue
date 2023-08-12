@@ -2,19 +2,19 @@
   <v-navigation-drawer
     :rail="isMiniDrawer"
     :model-value="isDrawerOpen"
-    :width="200"
+    :width="220"
     class="no-border"
     color="background"
     @update:model-value="(val) => (rootStore.drawer = val)"
   >
     <template #prepend>
-      <div class="mt-5 mx-3 text-h6 font-weight-medium">
+      <div class="mt-5 mx-3 text-h6">
         <router-link
           :style="isMiniDrawer ? 'visibility:hidden;' : ''"
           class="no-decoration no-color"
           to="/"
         >
-          REIMS {{ reimsSiteName }}
+          {{ reimsSiteName }}
         </router-link>
       </div>
       <div v-if="true && !isMiniDrawer" class="text-medium-emphasis ml-3 mb-1">
@@ -38,7 +38,7 @@
       </v-list-item>
     </v-list>
 
-    <v-list nav color="accent">
+    <v-list nav color="secondary">
       <v-list-item
         v-for="item in otherItems"
         :key="item.title"
@@ -141,5 +141,14 @@ const isMiniDrawer = computed(() => {
 
 .no-border {
   border-style: none !important;
+}
+</style>
+
+<style>
+.v-list--nav .v-list-item {
+  border-radius: 20px;
+}
+.v-list--nav .v-list-item__prepend {
+  margin-left: 8px;
 }
 </style>
