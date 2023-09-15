@@ -57,11 +57,14 @@
       </div>
     </template>
     <template #right>
-      <div v-if="lastDispensed.length > 0" style="max-width: 300px">
+      <div style="max-width: 300px">
         <v-alert v-if="!isOnline" type="warning" variant="outlined" density="compact">
           Go online to view recently dispensed glasses
         </v-alert>
-        <div v-for="glasses in lastDispensed" v-else :key="glasses.sku">
+        <div v-if="lastDispensed.length === 0" class="text-medium-emphasis">
+          No glasses dispensed or deleted recently.
+        </div>
+        <div v-for="glasses in lastDispensed" v-else :key="glasses.id">
           <glass-card :model-value="glasses">
             <template #actions>
               <v-btn variant="text" color="secondary" class="mx-0" @click="undoDispension(glasses)">
