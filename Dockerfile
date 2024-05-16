@@ -1,4 +1,4 @@
-FROM node:20@sha256:5e362bbb5ef4c6f6e2c86a27b7269b3b3e4bd8dba16be18037ee7ee4caa8afc1 AS build
+FROM node:20.13-bookworm AS build
 
 WORKDIR /usr/src/app
 COPY .yarn/ .yarn/
