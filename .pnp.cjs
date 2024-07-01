@@ -63,7 +63,7 @@ const RAW_RUNTIME_STATE =
           ["vite-plugin-vue-devtools", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:7.3.5"],\
           ["vite-plugin-vuetify", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.3"],\
           ["vitest", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:1.6.0"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["vue-router", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:4.4.0"],\
           ["vue-toastification", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.0-rc.5"],\
           ["vue-tsc", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.22"],\
@@ -560,6 +560,14 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@babel-parser-npm-7.24.5-a19c3b8c3b-f5ed1c5fd4.zip/node_modules/@babel/parser/",\
         "packageDependencies": [\
           ["@babel/parser", "npm:7.24.5"],\
+          ["@babel/types", "npm:7.24.5"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:7.24.7", {\
+        "packageLocation": "./.yarn/cache/@babel-parser-npm-7.24.7-79d233f3d1-ef9ebce60e.zip/node_modules/@babel/parser/",\
+        "packageDependencies": [\
+          ["@babel/parser", "npm:7.24.7"],\
           ["@babel/types", "npm:7.24.5"]\
         ],\
         "linkType": "HARD"\
@@ -3661,7 +3669,7 @@ const RAW_RUNTIME_STATE =
           ["@types/vue__compiler-sfc", null],\
           ["@vue/compiler-sfc", null],\
           ["@vue/test-utils", "npm:2.4.6"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"]\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"]\
         ],\
         "packagePeers": [\
           "@types/vue",\
@@ -4243,7 +4251,7 @@ const RAW_RUNTIME_STATE =
           ["@types/vite", null],\
           ["@types/vue", null],\
           ["vite", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:5.3.1"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"]\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"]\
         ],\
         "packagePeers": [\
           "@types/vite",\
@@ -4489,6 +4497,18 @@ const RAW_RUNTIME_STATE =
           ["source-map-js", "npm:1.2.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-compiler-core-npm-3.4.31-f79d05324a-1d83dd8c99.zip/node_modules/@vue/compiler-core/",\
+        "packageDependencies": [\
+          ["@vue/compiler-core", "npm:3.4.31"],\
+          ["@babel/parser", "npm:7.24.7"],\
+          ["@vue/shared", "npm:3.4.31"],\
+          ["entities", "npm:4.5.0"],\
+          ["estree-walker", "npm:2.0.2"],\
+          ["source-map-js", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@vue/compiler-dom", [\
@@ -4498,6 +4518,15 @@ const RAW_RUNTIME_STATE =
           ["@vue/compiler-dom", "npm:3.4.27"],\
           ["@vue/compiler-core", "npm:3.4.27"],\
           ["@vue/shared", "npm:3.4.27"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-compiler-dom-npm-3.4.31-6d2d250445-5f58557222.zip/node_modules/@vue/compiler-dom/",\
+        "packageDependencies": [\
+          ["@vue/compiler-dom", "npm:3.4.31"],\
+          ["@vue/compiler-core", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4518,6 +4547,22 @@ const RAW_RUNTIME_STATE =
           ["source-map-js", "npm:1.2.0"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-compiler-sfc-npm-3.4.31-25353c4cc2-87dcddecfc.zip/node_modules/@vue/compiler-sfc/",\
+        "packageDependencies": [\
+          ["@vue/compiler-sfc", "npm:3.4.31"],\
+          ["@babel/parser", "npm:7.24.7"],\
+          ["@vue/compiler-core", "npm:3.4.31"],\
+          ["@vue/compiler-dom", "npm:3.4.31"],\
+          ["@vue/compiler-ssr", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"],\
+          ["estree-walker", "npm:2.0.2"],\
+          ["magic-string", "npm:0.30.10"],\
+          ["postcss", "npm:8.4.38"],\
+          ["source-map-js", "npm:1.2.0"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@vue/compiler-ssr", [\
@@ -4527,6 +4572,15 @@ const RAW_RUNTIME_STATE =
           ["@vue/compiler-ssr", "npm:3.4.27"],\
           ["@vue/compiler-dom", "npm:3.4.27"],\
           ["@vue/shared", "npm:3.4.27"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-compiler-ssr-npm-3.4.31-9533893acb-88470b9cc4.zip/node_modules/@vue/compiler-ssr/",\
+        "packageDependencies": [\
+          ["@vue/compiler-ssr", "npm:3.4.31"],\
+          ["@vue/compiler-dom", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4665,6 +4719,14 @@ const RAW_RUNTIME_STATE =
           ["@vue/shared", "npm:3.4.27"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-reactivity-npm-3.4.31-6fb2cecc5c-594697ca56.zip/node_modules/@vue/reactivity/",\
+        "packageDependencies": [\
+          ["@vue/reactivity", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@vue/runtime-core", [\
@@ -4674,6 +4736,15 @@ const RAW_RUNTIME_STATE =
           ["@vue/runtime-core", "npm:3.4.27"],\
           ["@vue/reactivity", "npm:3.4.27"],\
           ["@vue/shared", "npm:3.4.27"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-runtime-core-npm-3.4.31-fb7fdb78b9-8521e29f6b.zip/node_modules/@vue/runtime-core/",\
+        "packageDependencies": [\
+          ["@vue/runtime-core", "npm:3.4.31"],\
+          ["@vue/reactivity", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4688,6 +4759,17 @@ const RAW_RUNTIME_STATE =
           ["csstype", "npm:3.1.3"]\
         ],\
         "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-runtime-dom-npm-3.4.31-18c8027dfb-8754524875.zip/node_modules/@vue/runtime-dom/",\
+        "packageDependencies": [\
+          ["@vue/runtime-dom", "npm:3.4.31"],\
+          ["@vue/reactivity", "npm:3.4.31"],\
+          ["@vue/runtime-core", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"],\
+          ["csstype", "npm:3.1.3"]\
+        ],\
+        "linkType": "HARD"\
       }]\
     ]],\
     ["@vue/server-renderer", [\
@@ -4698,6 +4780,28 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-server-renderer-npm-3.4.31-a7fc49ff3c-0f26a07475.zip/node_modules/@vue/server-renderer/",\
+        "packageDependencies": [\
+          ["@vue/server-renderer", "npm:3.4.31"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:11d7072061ac25e9bd0a4a442bae6b457ae610d0ff87d0bd63e0f30e1dd04aeea33155d0faa5db84ab33b050bd5ce419abb1a79eb91a91b4440043d2a90f60ca#npm:3.4.31", {\
+        "packageLocation": "./.yarn/__virtual__/@vue-server-renderer-virtual-4a6fd70529/0/cache/@vue-server-renderer-npm-3.4.31-a7fc49ff3c-0f26a07475.zip/node_modules/@vue/server-renderer/",\
+        "packageDependencies": [\
+          ["@vue/server-renderer", "virtual:11d7072061ac25e9bd0a4a442bae6b457ae610d0ff87d0bd63e0f30e1dd04aeea33155d0faa5db84ab33b050bd5ce419abb1a79eb91a91b4440043d2a90f60ca#npm:3.4.31"],\
+          ["@types/vue", null],\
+          ["@vue/compiler-ssr", "npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"]\
+        ],\
+        "packagePeers": [\
+          "@types/vue",\
+          "vue"\
+        ],\
+        "linkType": "HARD"\
+      }],\
       ["virtual:892dcdde7a65c61fd065786b65b67a6ee75d27449fe70c1c4dbe06814662ab40cecf7f2d0919d19f2790ced4c032fb99c8f7ab252aa2c8fc71aff3cd3b5ef48b#npm:3.4.27", {\
         "packageLocation": "./.yarn/__virtual__/@vue-server-renderer-virtual-6fe9c8ff45/0/cache/@vue-server-renderer-npm-3.4.27-d300140d6a-7481d25b66.zip/node_modules/@vue/server-renderer/",\
         "packageDependencies": [\
@@ -4706,21 +4810,6 @@ const RAW_RUNTIME_STATE =
           ["@vue/compiler-ssr", "npm:3.4.27"],\
           ["@vue/shared", "npm:3.4.27"],\
           ["vue", "virtual:cdc192050b5b77b90c5e6600bb1a2cde02bc79ad833c9d08ed8803e8817579866a6a1241c4f964aab2e6516b9ef7ebd9019f1edc0bfead9f07354fcf6624d07d#npm:3.4.27"]\
-        ],\
-        "packagePeers": [\
-          "@types/vue",\
-          "vue"\
-        ],\
-        "linkType": "HARD"\
-      }],\
-      ["virtual:c4ffbb475e51f5f033cc2374266edcfd56a1b2af238972da1db8b9771ee69853106dd97b74f868b5e35ef13d8c6ed52942a57965141737ba505c029f9875ac30#npm:3.4.27", {\
-        "packageLocation": "./.yarn/__virtual__/@vue-server-renderer-virtual-44c31b7877/0/cache/@vue-server-renderer-npm-3.4.27-d300140d6a-7481d25b66.zip/node_modules/@vue/server-renderer/",\
-        "packageDependencies": [\
-          ["@vue/server-renderer", "virtual:c4ffbb475e51f5f033cc2374266edcfd56a1b2af238972da1db8b9771ee69853106dd97b74f868b5e35ef13d8c6ed52942a57965141737ba505c029f9875ac30#npm:3.4.27"],\
-          ["@types/vue", null],\
-          ["@vue/compiler-ssr", "npm:3.4.27"],\
-          ["@vue/shared", "npm:3.4.27"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"]\
         ],\
         "packagePeers": [\
           "@types/vue",\
@@ -4749,6 +4838,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./.yarn/cache/@vue-shared-npm-3.4.27-0ec62782fb-abb5d18f3e.zip/node_modules/@vue/shared/",\
         "packageDependencies": [\
           ["@vue/shared", "npm:3.4.27"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/@vue-shared-npm-3.4.31-07b999feaf-ec11ba892b.zip/node_modules/@vue/shared/",\
+        "packageDependencies": [\
+          ["@vue/shared", "npm:3.4.31"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4781,7 +4877,7 @@ const RAW_RUNTIME_STATE =
           ["@types/vue", null],\
           ["@types/vuetify", null],\
           ["upath", "npm:2.0.1"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["vuetify", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.6.10"]\
         ],\
         "packagePeers": [\
@@ -9077,7 +9173,7 @@ const RAW_RUNTIME_STATE =
           ["@vue/composition-api", null],\
           ["@vue/devtools-api", "npm:6.6.1"],\
           ["typescript", "patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=379a07"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["vue-demi", "virtual:50a7b967fb1a8ea741a33b281c9dcaccb9abe724ccd6091ced07089ce1f4b38000975f7191c850e13b9ff48a837950e2186085ad2f609859df86994fd07c58f1#npm:0.14.7"]\
         ],\
         "packagePeers": [\
@@ -9429,7 +9525,7 @@ const RAW_RUNTIME_STATE =
           ["vite-plugin-vue-devtools", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:7.3.5"],\
           ["vite-plugin-vuetify", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.3"],\
           ["vitest", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:1.6.0"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["vue-router", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:4.4.0"],\
           ["vue-toastification", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.0-rc.5"],\
           ["vue-tsc", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.22"],\
@@ -10961,7 +11057,7 @@ const RAW_RUNTIME_STATE =
           ["debug", "virtual:1ff4b5f90832ba0a9c93ba1223af226e44ba70c1126a3740d93562b97bc36544e896a5e95908196f7458713e6a6089a34bfc67362fc6df7fa093bd06c878be47#npm:4.3.4"],\
           ["upath", "npm:2.0.1"],\
           ["vite", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:5.3.1"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["vuetify", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.6.10"]\
         ],\
         "packagePeers": [\
@@ -11052,6 +11148,13 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["npm:3.4.31", {\
+        "packageLocation": "./.yarn/cache/vue-npm-3.4.31-375a256262-74b213aab4.zip/node_modules/vue/",\
+        "packageDependencies": [\
+          ["vue", "npm:3.4.31"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["virtual:cdc192050b5b77b90c5e6600bb1a2cde02bc79ad833c9d08ed8803e8817579866a6a1241c4f964aab2e6516b9ef7ebd9019f1edc0bfead9f07354fcf6624d07d#npm:3.4.27", {\
         "packageLocation": "./.yarn/__virtual__/vue-virtual-892dcdde7a/0/cache/vue-npm-3.4.27-47a573e749-7957eece77.zip/node_modules/vue/",\
         "packageDependencies": [\
@@ -11070,16 +11173,16 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27", {\
-        "packageLocation": "./.yarn/__virtual__/vue-virtual-c4ffbb475e/0/cache/vue-npm-3.4.27-47a573e749-7957eece77.zip/node_modules/vue/",\
+      ["virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31", {\
+        "packageLocation": "./.yarn/__virtual__/vue-virtual-11d7072061/0/cache/vue-npm-3.4.31-375a256262-74b213aab4.zip/node_modules/vue/",\
         "packageDependencies": [\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["@types/typescript", null],\
-          ["@vue/compiler-dom", "npm:3.4.27"],\
-          ["@vue/compiler-sfc", "npm:3.4.27"],\
-          ["@vue/runtime-dom", "npm:3.4.27"],\
-          ["@vue/server-renderer", "virtual:c4ffbb475e51f5f033cc2374266edcfd56a1b2af238972da1db8b9771ee69853106dd97b74f868b5e35ef13d8c6ed52942a57965141737ba505c029f9875ac30#npm:3.4.27"],\
-          ["@vue/shared", "npm:3.4.27"],\
+          ["@vue/compiler-dom", "npm:3.4.31"],\
+          ["@vue/compiler-sfc", "npm:3.4.31"],\
+          ["@vue/runtime-dom", "npm:3.4.31"],\
+          ["@vue/server-renderer", "virtual:11d7072061ac25e9bd0a4a442bae6b457ae610d0ff87d0bd63e0f30e1dd04aeea33155d0faa5db84ab33b050bd5ce419abb1a79eb91a91b4440043d2a90f60ca#npm:3.4.31"],\
+          ["@vue/shared", "npm:3.4.31"],\
           ["typescript", "patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=379a07"]\
         ],\
         "packagePeers": [\
@@ -11137,7 +11240,7 @@ const RAW_RUNTIME_STATE =
           ["@types/vue", null],\
           ["@types/vue__composition-api", null],\
           ["@vue/composition-api", null],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"]\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"]\
         ],\
         "packagePeers": [\
           "@types/vue",\
@@ -11208,7 +11311,7 @@ const RAW_RUNTIME_STATE =
           ["vue-router", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:4.4.0"],\
           ["@types/vue", null],\
           ["@vue/devtools-api", "npm:6.6.1"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"]\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"]\
         ],\
         "packagePeers": [\
           "@types/vue",\
@@ -11241,7 +11344,7 @@ const RAW_RUNTIME_STATE =
         "packageDependencies": [\
           ["vue-toastification", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.0-rc.5"],\
           ["@types/vue", null],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"]\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"]\
         ],\
         "packagePeers": [\
           "@types/vue",\
@@ -11306,7 +11409,7 @@ const RAW_RUNTIME_STATE =
           ["@types/webpack-plugin-vuetify", null],\
           ["typescript", "patch:typescript@npm%3A5.5.2#optional!builtin<compat/typescript>::version=5.5.2&hash=379a07"],\
           ["vite-plugin-vuetify", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.0.3"],\
-          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.27"],\
+          ["vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.4.31"],\
           ["vue-i18n", null],\
           ["webpack-plugin-vuetify", null]\
         ],\
