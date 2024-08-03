@@ -31,7 +31,7 @@ const RAW_RUNTIME_STATE =
           ["@fontsource-variable/roboto-flex", "npm:5.0.15"],\
           ["@mdi/js", "npm:7.4.47"],\
           ["@pinia/testing", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:0.1.4"],\
-          ["@testing-library/vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.0.3"],\
+          ["@testing-library/vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.1.0"],\
           ["@types/jest", "npm:29.5.12"],\
           ["@types/node", "npm:20.14.14"],\
           ["@typescript-eslint/eslint-plugin", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:7.18.0"],\
@@ -3651,17 +3651,17 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["@testing-library/vue", [\
-      ["npm:8.0.3", {\
-        "packageLocation": "./.yarn/cache/@testing-library-vue-npm-8.0.3-f3c1ae3f4d-d4f5e49038.zip/node_modules/@testing-library/vue/",\
+      ["npm:8.1.0", {\
+        "packageLocation": "./.yarn/cache/@testing-library-vue-npm-8.1.0-23711f42dc-5581d79407.zip/node_modules/@testing-library/vue/",\
         "packageDependencies": [\
-          ["@testing-library/vue", "npm:8.0.3"]\
+          ["@testing-library/vue", "npm:8.1.0"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.0.3", {\
-        "packageLocation": "./.yarn/__virtual__/@testing-library-vue-virtual-e5d0d7a6a5/0/cache/@testing-library-vue-npm-8.0.3-f3c1ae3f4d-d4f5e49038.zip/node_modules/@testing-library/vue/",\
+      ["virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.1.0", {\
+        "packageLocation": "./.yarn/__virtual__/@testing-library-vue-virtual-a86656fcc8/0/cache/@testing-library-vue-npm-8.1.0-23711f42dc-5581d79407.zip/node_modules/@testing-library/vue/",\
         "packageDependencies": [\
-          ["@testing-library/vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.0.3"],\
+          ["@testing-library/vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.1.0"],\
           ["@babel/runtime", "npm:7.24.5"],\
           ["@testing-library/dom", "npm:9.3.4"],\
           ["@types/vue", null],\
@@ -9543,7 +9543,7 @@ const RAW_RUNTIME_STATE =
           ["@fontsource-variable/roboto-flex", "npm:5.0.15"],\
           ["@mdi/js", "npm:7.4.47"],\
           ["@pinia/testing", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:0.1.4"],\
-          ["@testing-library/vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.0.3"],\
+          ["@testing-library/vue", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:8.1.0"],\
           ["@types/jest", "npm:29.5.12"],\
           ["@types/node", "npm:20.14.14"],\
           ["@typescript-eslint/eslint-plugin", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:7.18.0"],\
