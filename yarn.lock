@@ -1435,14 +1435,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/types@npm:7.25.4":
-  version: 7.25.4
-  resolution: "@babel/types@npm:7.25.4"
+"@babel/types@npm:7.25.6":
+  version: 7.25.6
+  resolution: "@babel/types@npm:7.25.6"
   dependencies:
     "@babel/helper-string-parser": "npm:^7.24.8"
     "@babel/helper-validator-identifier": "npm:^7.24.7"
     to-fast-properties: "npm:^2.0.0"
-  checksum: 10/d4a1194612d0a2a6ce9a0be325578b43d74e5f5278c67409468ba0a924341f0ad349ef0245ee8a36da3766efe5cc59cd6bb52547674150f97d8dc4c8cfa5d6b8
+  checksum: 10/7b54665e1b51f525fe0f451efdd9fe7a4a6dfba3fd4956c3530bc77336b66ffe3d78c093796ed044119b5d213176af7cf326f317a2057c538d575c6cefcb3562
   languageName: node
   linkType: hard
 
@@ -7464,7 +7464,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "reims2-frontend@workspace:."
   dependencies:
-    "@babel/types": "npm:7.25.4"
+    "@babel/types": "npm:7.25.6"
     "@fontsource-variable/roboto-flex": "npm:5.0.16"
     "@mdi/js": "npm:7.4.47"
     "@pinia/testing": "npm:0.1.5"
