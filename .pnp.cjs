@@ -27,7 +27,7 @@ const RAW_RUNTIME_STATE =
       [null, {\
         "packageLocation": "./",\
         "packageDependencies": [\
-          ["@babel/types", "npm:7.25.4"],\
+          ["@babel/types", "npm:7.25.6"],\
           ["@fontsource-variable/roboto-flex", "npm:5.0.16"],\
           ["@mdi/js", "npm:7.4.47"],\
           ["@pinia/testing", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:0.1.5"],\
@@ -2581,10 +2581,10 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "HARD"\
       }],\
-      ["npm:7.25.4", {\
-        "packageLocation": "./.yarn/cache/@babel-types-npm-7.25.4-f235c433f3-d4a1194612.zip/node_modules/@babel/types/",\
+      ["npm:7.25.6", {\
+        "packageLocation": "./.yarn/cache/@babel-types-npm-7.25.6-98df73a2ca-7b54665e1b.zip/node_modules/@babel/types/",\
         "packageDependencies": [\
-          ["@babel/types", "npm:7.25.4"],\
+          ["@babel/types", "npm:7.25.6"],\
           ["@babel/helper-string-parser", "npm:7.24.8"],\
           ["@babel/helper-validator-identifier", "npm:7.24.7"],\
           ["to-fast-properties", "npm:2.0.0"]\
@@ -9766,7 +9766,7 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "./",\
         "packageDependencies": [\
           ["reims2-frontend", "workspace:."],\
-          ["@babel/types", "npm:7.25.4"],\
+          ["@babel/types", "npm:7.25.6"],\
           ["@fontsource-variable/roboto-flex", "npm:5.0.16"],\
           ["@mdi/js", "npm:7.4.47"],\
           ["@pinia/testing", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:0.1.5"],\
