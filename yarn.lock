@@ -2427,9 +2427,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/vue@npm:8.0.3":
-  version: 8.0.3
-  resolution: "@testing-library/vue@npm:8.0.3"
+"@testing-library/vue@npm:8.1.0":
+  version: 8.1.0
+  resolution: "@testing-library/vue@npm:8.1.0"
   dependencies:
     "@babel/runtime": "npm:^7.23.2"
     "@testing-library/dom": "npm:^9.3.3"
@@ -2440,7 +2440,7 @@ __metadata:
   peerDependenciesMeta:
     "@vue/compiler-sfc":
       optional: true
-  checksum: 10/d4f5e49038016b7737f86cdf0c47cb185ad66edd9f2356671c2f467a3572c46410e174bafca574a3dc468521cf054f481a255630a2bb03af88f5dad8e8b46c92
+  checksum: 10/5581d794070c550f3f6873880757c2ab61e75b5c8793159ce74db13fc06e154b95f5bff589144b824d411bd16d76c8ae1ccb50de2ab15eaa183836b3dcd51713
   languageName: node
   linkType: hard
 
@@ -7469,7 +7469,7 @@ __metadata:
     "@mdi/js": "npm:7.4.47"
     "@pinia/testing": "npm:0.1.5"
     "@playwright/test": "npm:1.46.1"
-    "@testing-library/vue": "npm:8.0.3"
+    "@testing-library/vue": "npm:8.1.0"
     "@types/jest": "npm:29.5.12"
     "@types/node": "npm:20.16.2"
     "@typescript-eslint/eslint-plugin": "npm:7.18.0"
