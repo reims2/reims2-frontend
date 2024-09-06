@@ -56,7 +56,7 @@ const RAW_RUNTIME_STATE =
           ["pinia", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.2.2"],\
           ["pinia-plugin-persistedstate", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.2.3"],\
           ["prettier", "npm:3.3.3"],\
-          ["sass", "npm:1.77.8"],\
+          ["sass", "npm:1.78.0"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["unplugin-auto-import", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:0.18.2"],\
           ["vite", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:5.4.3"],\
@@ -9826,7 +9826,7 @@ const RAW_RUNTIME_STATE =
           ["pinia", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:2.2.2"],\
           ["pinia-plugin-persistedstate", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:3.2.3"],\
           ["prettier", "npm:3.3.3"],\
-          ["sass", "npm:1.77.8"],\
+          ["sass", "npm:1.78.0"],\
           ["typescript", "patch:typescript@npm%3A5.5.4#optional!builtin<compat/typescript>::version=5.5.4&hash=379a07"],\
           ["unplugin-auto-import", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:0.18.2"],\
           ["vite", "virtual:f38e57d791791749fcbabd309fca608b4b94dece2d82ce843f1a41fa3116db596a20c099e6de2af31c105fe4ac076cf46376e7075977c7d2a35411de7ab0cc23#npm:5.4.3"],\
@@ -10044,10 +10044,10 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["sass", [\
-      ["npm:1.77.8", {\
-        "packageLocation": "./.yarn/cache/sass-npm-1.77.8-d0ad322666-4bf6e3007f.zip/node_modules/sass/",\
+      ["npm:1.78.0", {\
+        "packageLocation": "./.yarn/cache/sass-npm-1.78.0-4aa9d2730a-a180135add.zip/node_modules/sass/",\
         "packageDependencies": [\
-          ["sass", "npm:1.77.8"],\
+          ["sass", "npm:1.78.0"],\
           ["chokidar", "npm:3.6.0"],\
           ["immutable", "npm:4.3.6"],\
           ["source-map-js", "npm:1.2.0"]\
@@ -11193,7 +11193,7 @@ const RAW_RUNTIME_STATE =
           ["lightningcss", null],\
           ["postcss", "npm:8.4.45"],\
           ["rollup", "npm:4.21.0"],\
-          ["sass", "npm:1.77.8"],\
+          ["sass", "npm:1.78.0"],\
           ["sass-embedded", null],\
           ["stylus", null],\
           ["sugarss", null],\
